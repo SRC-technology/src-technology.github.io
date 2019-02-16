@@ -1,6 +1,0 @@
-(data_only_dirs node_modules)
-
-(executable
-  (name soon)
-	(js_of_ocaml)
-	(libraries js_of_ocaml str bigarray reglfw Revery))
