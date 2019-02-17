@@ -18,13 +18,11 @@ export default () => (
           height={height}
           devicePixelRatio={devicePixelRatio}
         />
-        <div style={{zIndex: 20}}>
-          <Logo 
-            width={width}
-            height={height}
-            devicePixelRatio={devicePixelRatio}
-          />
-        </div>
+        <Logo 
+          width={width}
+          height={height}
+          devicePixelRatio={devicePixelRatio}
+        />
       </Fragment>
     )}
   </Viewport>    
