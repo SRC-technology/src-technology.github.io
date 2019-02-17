@@ -14,9 +14,9 @@ const shapes = [
 const getBottomLeftSCorner = () => {
   const random = Math.random()
 
-  if (random < 0.6) {
+  if (random < 0.8) {
     return [shapes[0]]
-  } else if (random < 0.8) {
+  } else if (random < 0.9) {
     return [shapes[1]]
   } else {
     return [shapes[1], shapes[5]]
@@ -25,10 +25,8 @@ const getBottomLeftSCorner = () => {
 
 const getCenterRightSCorner = () => {
   const random = Math.random()
-  if (random < 0.6) {
+  if (random < 0.8) {
     return [shapes[0]]
-  } else if (random < 0.8) {
-    return [shapes[3]]
   } else {
     return [shapes[3], shapes[7]]
   }
@@ -36,9 +34,9 @@ const getCenterRightSCorner = () => {
 
 const getCenterLeftSCorner = () => {
   const random = Math.random()
-  if (random < 0.6) {
+  if (random < 0.8) {
     return [shapes[0]]
-  } else if (random < 0.8) {
+  } else if (random < 0.9) {
     return [shapes[4]]
   } else {
     return [shapes[4], shapes[8]]
@@ -47,10 +45,48 @@ const getCenterLeftSCorner = () => {
 
 const getTopRightSCorner = () => {
   const random = Math.random()
-  if (random < 0.6) {
+  if (random < 0.8) {
+    return [shapes[0]]
+  } else if (random < 0.9) {
+    return [shapes[2]]
+  } else {
+    return [shapes[2], shapes[9]]
+  }
+}
+
+const getTopLeftRCorner = () => {
+  const random = Math.random()
+
+  if (random > 0.8) {
+    return [shapes[1], shapes[5]]
+  } else {
+    return [shapes[0]]
+  }
+}
+
+const getTopRightCCorner = () => {
+  const random = Math.random()
+
+  if (random < 0.7) {
+    return [shapes[3], shapes[7]]
+  } else if (random < 0.8) {
+    return [shapes[2], shapes[9]]
+  } else if (random < 0.9) {
+    return [shapes[2]]
+  } else {
+    return [shapes[0]]
+  }
+}
+
+const getBottomRightCCorner = () => {
+  const random = Math.random()
+
+  if (random < 0.7) {
     return [shapes[0]]
   } else if (random < 0.8) {
-    return [shapes[2]]
+    return [shapes[3], shapes[7]]
+  } else if (random < 0.9) {
+    return [shapes[3]]
   } else {
     return [shapes[2], shapes[9]]
   }
@@ -78,7 +114,7 @@ export default () => [
   [shapes[6]],
   [shapes[6]],
   [shapes[6]],
-  [shapes[1], shapes[5]],
+  getTopLeftRCorner(),
   [shapes[0]],
   [shapes[3]],
   [shapes[6]],
@@ -140,11 +176,11 @@ export default () => [
   [shapes[6]],
   [shapes[6]],
   [shapes[6]],
-  [shapes[3], shapes[7]],
+  getTopRightCCorner(),
   [shapes[6]],
   [shapes[6]],
   [shapes[6]],
-  [shapes[0]],
+  getBottomRightCCorner(),
   [shapes[6]],
   [shapes[6]],
   [shapes[6]],

@@ -4,7 +4,7 @@ import { dot } from './shapes'
 import getLatticeTopLeftPixel from './getLatticeTopLeftPixel'
 import getLogoList from './getLogoList'
 
-const LENGTH = 20000
+const LENGTH = 200000
 
 const drawingLoop = (getLatticeTopLeftPixelWithCenterAndGridSize, drawDot, squareSide, clean, time) => {
   clean()

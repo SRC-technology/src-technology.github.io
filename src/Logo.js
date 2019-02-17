@@ -59,7 +59,7 @@ export default ({ width, height, devicePixelRatio }) => {
       setInterval(() => {
         drawingLoop(getLatticeTopLeftPixelWithCenterAndGridSize, drawRect, drawTriangle, drawTriangleBoundary, squareSide, clean, time)
         time ++
-      }, 200)
+      }, 250)
     }
   })
 

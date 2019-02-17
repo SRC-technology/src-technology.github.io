@@ -3792,25 +3792,16 @@ var _jsxFileName = "/Users/fernando.canel/Code/me/stockholmrc.github.io/pages/in
         lineNumber: 16
       },
       __self: this
-    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      style: {
-        zIndex: 20
-      },
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 21
-      },
-      __self: this
-    }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_Logo__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_Logo__WEBPACK_IMPORTED_MODULE_4__["default"], {
       width: width,
       height: height,
       devicePixelRatio: devicePixelRatio,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 22
+        lineNumber: 21
       },
       __self: this
-    })));
+    }));
   });
 });
 
@@ -3837,7 +3828,7 @@ var _jsxFileName = "/Users/fernando.canel/Code/me/stockholmrc.github.io/src/Dots
 
 
 
-var LENGTH = 20000;
+var LENGTH = 200000;
 
 var drawingLoop = function drawingLoop(getLatticeTopLeftPixelWithCenterAndGridSize, drawDot, squareSide, clean, time) {
   clean();
@@ -4089,7 +4080,7 @@ var drawingLoop = function drawingLoop(getLatticeTopLeftPixelWithCenterAndGridSi
       setInterval(function () {
         drawingLoop(getLatticeTopLeftPixelWithCenterAndGridSize, drawRect, drawTriangle, drawTriangleBoundary, squareSide, clean, time);
         time++;
-      }, 200);
+      }, 250);
     }
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("canvas", {
@@ -4320,9 +4311,9 @@ var shapes = [{
 var getBottomLeftSCorner = function getBottomLeftSCorner() {
   var random = Math.random();
 
-  if (random < 0.6) {
+  if (random < 0.8) {
     return [shapes[0]];
-  } else if (random < 0.8) {
+  } else if (random < 0.9) {
     return [shapes[1]];
   } else {
     return [shapes[1], shapes[5]];
@@ -4332,10 +4323,8 @@ var getBottomLeftSCorner = function getBottomLeftSCorner() {
 var getCenterRightSCorner = function getCenterRightSCorner() {
   var random = Math.random();
 
-  if (random < 0.6) {
+  if (random < 0.8) {
     return [shapes[0]];
-  } else if (random < 0.8) {
-    return [shapes[3]];
   } else {
     return [shapes[3], shapes[7]];
   }
@@ -4344,9 +4333,9 @@ var getCenterRightSCorner = function getCenterRightSCorner() {
 var getCenterLeftSCorner = function getCenterLeftSCorner() {
   var random = Math.random();
 
-  if (random < 0.6) {
+  if (random < 0.8) {
     return [shapes[0]];
-  } else if (random < 0.8) {
+  } else if (random < 0.9) {
     return [shapes[4]];
   } else {
     return [shapes[4], shapes[8]];
@@ -4356,17 +4345,55 @@ var getCenterLeftSCorner = function getCenterLeftSCorner() {
 var getTopRightSCorner = function getTopRightSCorner() {
   var random = Math.random();
 
-  if (random < 0.6) {
+  if (random < 0.8) {
     return [shapes[0]];
-  } else if (random < 0.8) {
+  } else if (random < 0.9) {
     return [shapes[2]];
   } else {
     return [shapes[2], shapes[9]];
   }
 };
 
+var getTopLeftRCorner = function getTopLeftRCorner() {
+  var random = Math.random();
+
+  if (random > 0.8) {
+    return [shapes[1], shapes[5]];
+  } else {
+    return [shapes[0]];
+  }
+};
+
+var getTopRightCCorner = function getTopRightCCorner() {
+  var random = Math.random();
+
+  if (random < 0.7) {
+    return [shapes[3], shapes[7]];
+  } else if (random < 0.8) {
+    return [shapes[2], shapes[9]];
+  } else if (random < 0.9) {
+    return [shapes[2]];
+  } else {
+    return [shapes[0]];
+  }
+};
+
+var getBottomRightCCorner = function getBottomRightCCorner() {
+  var random = Math.random();
+
+  if (random < 0.7) {
+    return [shapes[0]];
+  } else if (random < 0.8) {
+    return [shapes[3], shapes[7]];
+  } else if (random < 0.9) {
+    return [shapes[3]];
+  } else {
+    return [shapes[2], shapes[9]];
+  }
+};
+
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return [[shapes[0]], [shapes[3], shapes[2]], [shapes[0]], [shapes[6]], [shapes[0]], [shapes[0]], [shapes[0]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[1], shapes[5]], [shapes[0]], [shapes[3]], [shapes[6]], [shapes[1]], [shapes[0]], [shapes[0]], [shapes[0]], [shapes[4]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[2]], [shapes[0]], getCenterRightSCorner(), [shapes[6]], getTopRightSCorner(), [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[3], shapes[7]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], getBottomLeftSCorner(), [shapes[6]], getCenterLeftSCorner(), [shapes[0]], [shapes[1]]];
+  return [[shapes[0]], [shapes[3], shapes[2]], [shapes[0]], [shapes[6]], [shapes[0]], [shapes[0]], [shapes[0]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], getTopLeftRCorner(), [shapes[0]], [shapes[3]], [shapes[6]], [shapes[1]], [shapes[0]], [shapes[0]], [shapes[0]], [shapes[4]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[2]], [shapes[0]], getCenterRightSCorner(), [shapes[6]], getTopRightSCorner(), [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[0]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], getTopRightCCorner(), [shapes[6]], [shapes[6]], [shapes[6]], getBottomRightCCorner(), [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], [shapes[6]], getBottomLeftSCorner(), [shapes[6]], getCenterLeftSCorner(), [shapes[0]], [shapes[1]]];
 });
 
 /***/ }),
