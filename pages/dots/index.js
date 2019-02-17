@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
-import Viewport from '../src/Viewport'
-import Dots from '../src/Dots'
+import Viewport from '../../src/Viewport'
+import Dots from '../../src/Dots'
 
 export default () => (
   <Viewport>
