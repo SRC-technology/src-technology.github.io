@@ -10,7 +10,8 @@ const drawingLoop = (getLatticeTopLeftPixelWithCenterAndGridSize, drawRect, draw
   const logo = getLogoList()
   const l = logo.length
   for (let i = 0; i < l; i ++) {
-    const latticeTopLeftPixel = getLatticeTopLeftPixelWithCenterAndGridSize(i)
+    const displacement = Math.max(20 - time, 0)
+    const latticeTopLeftPixel = getLatticeTopLeftPixelWithCenterAndGridSize(i + displacement)
 
     // const shape = shapes[(i + time) % shapes.length]
     const pieces = logo[i]
@@ -59,7 +60,7 @@ export default ({ width, height, devicePixelRatio }) => {
       setInterval(() => {
         drawingLoop(getLatticeTopLeftPixelWithCenterAndGridSize, drawRect, drawTriangle, drawTriangleBoundary, squareSide, clean, time)
         time ++
-      }, 250)
+      }, 50)
     }
   })
 
