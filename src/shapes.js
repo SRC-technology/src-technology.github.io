@@ -8,6 +8,12 @@ export const circle = context2d => (x, y, radius) => {
   context2d.fill()
 }
 
+export const dot = context2d => (x, y) => {
+  context2d.beginPath();
+  context2d.arc(x, y, 2, 0, 2 * Math.PI)
+  context2d.fill()
+}
+
 export const triangle = context2d => (x, y, up, left, width, height) => {
   context2d.beginPath()
   context2d.moveTo(left ? x : x + width, up ? y : y + height)

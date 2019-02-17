@@ -8,7 +8,7 @@ const palette = [
   'rgb(28, 165, 252)',
   'rgb(253, 183, 43)',
   'rgb(252, 19, 109)',
-  'rgb(0, 0, 0)'
+  // 'rgb(0, 0, 0)'
 ]
 
 export const roundRobin = i => palette[i % palette.length]

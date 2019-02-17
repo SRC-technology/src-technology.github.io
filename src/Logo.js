@@ -45,6 +45,8 @@ export default ({ width, height, devicePixelRatio }) => {
 
       const getLatticeTopLeftPixelWithCenterAndGridSize = 
         getLatticeTopLeftPixel(middlePoint, squareSide)
+
+      context2d.fillStyle = 'rgba(0,0,0,.8)'
       
       const drawRect = rect(context2d)
       const drawTriangle = triangle(context2d)

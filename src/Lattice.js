@@ -37,13 +37,13 @@ const renderLoop = (context2d, draw, squareSide, time, middlePoint) => {
   context2d.clearRect(0, 0, middlePoint[0] * 2, middlePoint[1] * 2)
 
   for (let i = 0; i < LENGTH; i++) {
-    // const latticeTopLeftPixel = getLatticeTopLeftPixel(middlePoint, squareSide)(getFibonacci(i) + time)
-    const latticeTopLeftPixel = getLatticeTopLeftPixel(middlePoint, squareSide)(getNthTriangularNumber(i + time))
-    // const latticeTopLeftPixel = getLatticeTopLeftPixel(middlePoint, squareSide)(i * time)
+    // const latticeTopLeftPixel = getLatticeTopLeftPixel(middlePoint, squareSide)(getFibonacci(i + time))
+    // const latticeTopLeftPixel = getLatticeTopLeftPixel(middlePoint, squareSide)(getNthTriangularNumber(i + time))
+    const latticeTopLeftPixel = getLatticeTopLeftPixel(middlePoint, squareSide)(i * time)
     draw(
       latticeTopLeftPixel[0], 
       latticeTopLeftPixel[1], 
-      upToTriangular(i),
+      upToTriangular(i + time),
       sizes[1]
     )
   }
