@@ -1,19 +1,11 @@
 import React, { useRef, useEffect } from 'react'
-import getLatticeCoordinatesFor from 'zero-indexed-ulam-spiral/getLatticeCoordinatesFor'
 import { GRID } from './constants'
 import getFibonacci from './getFibonacci'
 import getLatticeTopLeftPixel from './getLatticeTopLeftPixel'
 import { upToTriangular } from './colorPicking'
-import getNthTriangularNumber from 'triangular-numbers/getNthTriangularNumber'
-import { triangle, rect, triangleBoundary } from './shapes'
+import { rect } from './shapes'
 
 const LENGTH = 20000
-
-const circle = context2d => (x, y, radius) => {
-  context2d.beginPath();
-  context2d.arc(x, y, radius, 0, 2 * Math.PI)
-  context2d.fill()
-}
 
 const drawSquare = (context2d) => (x, y, color, size) => {
   const cachedFillStyle = context2d.fillStyle

@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import Viewport from '../src/Viewport'
 import Lattice from '../src/Lattice'
 import Dots from '../src/Dots'
-import Logo from '../src/Logo'
+import BigLogo from '../src/BigLogo'
 
 export default () => (
   <Viewport>
@@ -18,7 +18,7 @@ export default () => (
           height={height}
           devicePixelRatio={devicePixelRatio}
         />
-        <Logo 
+        <BigLogo 
           width={width}
           height={height}
           devicePixelRatio={devicePixelRatio}

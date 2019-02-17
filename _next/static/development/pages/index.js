@@ -3905,18 +3905,12 @@ var drawingLoop = function drawingLoop(getLatticeTopLeftPixelWithCenterAndGridSi
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var zero_indexed_ulam_spiral_getLatticeCoordinatesFor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! zero-indexed-ulam-spiral/getLatticeCoordinatesFor */ "./node_modules/zero-indexed-ulam-spiral/getLatticeCoordinatesFor.js");
-/* harmony import */ var zero_indexed_ulam_spiral_getLatticeCoordinatesFor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(zero_indexed_ulam_spiral_getLatticeCoordinatesFor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./constants */ "./src/constants.js");
-/* harmony import */ var _getFibonacci__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getFibonacci */ "./src/getFibonacci.js");
-/* harmony import */ var _getLatticeTopLeftPixel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./getLatticeTopLeftPixel */ "./src/getLatticeTopLeftPixel.js");
-/* harmony import */ var _colorPicking__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./colorPicking */ "./src/colorPicking.js");
-/* harmony import */ var triangular_numbers_getNthTriangularNumber__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! triangular-numbers/getNthTriangularNumber */ "./node_modules/triangular-numbers/getNthTriangularNumber.js");
-/* harmony import */ var triangular_numbers_getNthTriangularNumber__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(triangular_numbers_getNthTriangularNumber__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _shapes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shapes */ "./src/shapes.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./constants */ "./src/constants.js");
+/* harmony import */ var _getFibonacci__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getFibonacci */ "./src/getFibonacci.js");
+/* harmony import */ var _getLatticeTopLeftPixel__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getLatticeTopLeftPixel */ "./src/getLatticeTopLeftPixel.js");
+/* harmony import */ var _colorPicking__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./colorPicking */ "./src/colorPicking.js");
+/* harmony import */ var _shapes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./shapes */ "./src/shapes.js");
 var _jsxFileName = "/Users/fernando.canel/Code/me/stockholmrc.github.io/src/Lattice.js";
-
-
 
 
 
@@ -3925,20 +3919,12 @@ var _jsxFileName = "/Users/fernando.canel/Code/me/stockholmrc.github.io/src/Latt
 
 var LENGTH = 20000;
 
-var circle = function circle(context2d) {
-  return function (x, y, radius) {
-    context2d.beginPath();
-    context2d.arc(x, y, radius, 0, 2 * Math.PI);
-    context2d.fill();
-  };
-};
-
 var drawSquare = function drawSquare(context2d) {
   return function (x, y, color, size) {
     var cachedFillStyle = context2d.fillStyle;
     context2d.fillStyle = color; // if (Math.random() > 0.5) {
 
-    Object(_shapes__WEBPACK_IMPORTED_MODULE_7__["rect"])(context2d)(x, y, size[0], size[1]); // } else {
+    Object(_shapes__WEBPACK_IMPORTED_MODULE_5__["rect"])(context2d)(x, y, size[0], size[1]); // } else {
     //   circle(context2d)(x, y, size[0])
     // }
 
@@ -3954,8 +3940,8 @@ var renderLoop = function renderLoop(context2d, draw, squareSide, time, middlePo
   for (var i = 0; i < LENGTH; i++) {
     // const latticeTopLeftPixel = getLatticeTopLeftPixel(middlePoint, squareSide)(getFibonacci(i + time))
     // const latticeTopLeftPixel = getLatticeTopLeftPixel(middlePoint, squareSide)(getNthTriangularNumber(i + time))
-    var latticeTopLeftPixel = Object(_getLatticeTopLeftPixel__WEBPACK_IMPORTED_MODULE_4__["default"])(middlePoint, squareSide)(i * time);
-    draw(latticeTopLeftPixel[0], latticeTopLeftPixel[1], Object(_colorPicking__WEBPACK_IMPORTED_MODULE_5__["upToTriangular"])(i + time), sizes[1]);
+    var latticeTopLeftPixel = Object(_getLatticeTopLeftPixel__WEBPACK_IMPORTED_MODULE_3__["default"])(middlePoint, squareSide)(i * time);
+    draw(latticeTopLeftPixel[0], latticeTopLeftPixel[1], Object(_colorPicking__WEBPACK_IMPORTED_MODULE_4__["upToTriangular"])(i + time), sizes[1]);
   }
 };
 
@@ -3968,7 +3954,7 @@ var renderLoop = function renderLoop(context2d, draw, squareSide, time, middlePo
 
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(function () {
     if (_ref2.current !== undefined) {
-      var squareSide = _constants__WEBPACK_IMPORTED_MODULE_2__["GRID"] * devicePixelRatio;
+      var squareSide = _constants__WEBPACK_IMPORTED_MODULE_1__["GRID"] * devicePixelRatio;
       var middlePoint = [Math.floor(width / 2) * devicePixelRatio, Math.floor(height / 2) * devicePixelRatio];
 
       var context2d = _ref2.current.getContext('2d');
@@ -3997,7 +3983,7 @@ var renderLoop = function renderLoop(context2d, draw, squareSide, time, middlePo
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76
+      lineNumber: 68
     },
     __self: this
   });
@@ -4033,7 +4019,8 @@ var drawingLoop = function drawingLoop(getLatticeTopLeftPixelWithCenterAndGridSi
   var l = logo.length;
 
   for (var i = 0; i < l; i++) {
-    var latticeTopLeftPixel = getLatticeTopLeftPixelWithCenterAndGridSize(i); // const shape = shapes[(i + time) % shapes.length]
+    var displacement = Math.max(20 - time, 0);
+    var latticeTopLeftPixel = getLatticeTopLeftPixelWithCenterAndGridSize(i + displacement); // const shape = shapes[(i + time) % shapes.length]
 
     var pieces = logo[i];
 
@@ -4080,7 +4067,7 @@ var drawingLoop = function drawingLoop(getLatticeTopLeftPixelWithCenterAndGridSi
       setInterval(function () {
         drawingLoop(getLatticeTopLeftPixelWithCenterAndGridSize, drawRect, drawTriangle, drawTriangleBoundary, squareSide, clean, time);
         time++;
-      }, 250);
+      }, 50);
     }
   });
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("canvas", {
@@ -4099,7 +4086,7 @@ var drawingLoop = function drawingLoop(getLatticeTopLeftPixelWithCenterAndGridSi
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66
+      lineNumber: 67
     },
     __self: this
   });
@@ -4402,7 +4389,7 @@ var getBottomRightCCorner = function getBottomRightCCorner() {
 /*!***********************!*\
   !*** ./src/shapes.js ***!
   \***********************/
-/*! exports provided: rect, circle, dot, triangle, triangleBoundary */
+/*! exports provided: rect, circle, dot, triangle, triangleBoundary, line */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4412,6 +4399,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dot", function() { return dot; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triangle", function() { return triangle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "triangleBoundary", function() { return triangleBoundary; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "line", function() { return line; });
 var rect = function rect(context2d) {
   return function (x, y, width, height) {
     context2d.fillRect(x, y, width, height);
@@ -4477,6 +4465,34 @@ var triangleBoundary = function triangleBoundary(context2d) {
 
     context2d.closePath();
     context2d.fill();
+  };
+};
+var line = function line(context2d) {
+  return function (x, y, position, grid) {
+    var thick = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : true;
+    var width = grid / (thick ? 5 : 10);
+
+    switch (position) {
+      case 'left':
+        {
+          return context2d.fillRect(x, y, width, grid);
+        }
+
+      case 'right':
+        {
+          return context2d.fillRect(x + grid - width, y, width, grid);
+        }
+
+      case 'top':
+        {
+          return context2d.fillRect(x, y, grid, width);
+        }
+
+      case 'bottom':
+        {
+          return context2d.fillRect(x, y + grid - width, grid, width);
+        }
+    }
   };
 };
 

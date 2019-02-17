@@ -57,3 +57,23 @@ export const triangleBoundary = context2d => (x, y, up, left, width, height) => 
   context2d.closePath()
   context2d.fill()
 }
+
+export const line = context2d => (x, y, position, grid, thick = true) => {
+  const width = grid / (thick ? 5 : 10)
+
+  switch (position) {
+    case 'left': {
+      return context2d.fillRect(x, y, width, grid)
+    }
+    case 'right': {
+      return context2d.fillRect(x + grid - width, y, width, grid)
+    }
+    case 'top': {
+      return context2d.fillRect(x, y, grid, width)
+    }
+    case 'bottom': {
+      return context2d.fillRect(x, y + grid - width, grid, width)
+    }
+  }
+
+}
